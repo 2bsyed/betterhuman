@@ -1,0 +1,26 @@
+---
+const {
+  compact = false,
+  title = 'Get the free weekly BetterHuman newsletter',
+  cta = 'Join free newsletter',
+  note = 'Readers join for free, get weekly emails, and support the project through newsletter sponsorship/ads.'
+} = Astro.props;
+---
+<section id="newsletter" class={`section ${compact ? '' : 'alt'}`}>
+  <div class="container newsletter">
+    <div>
+      <p class="eyebrow">Free weekly newsletter</p>
+      <h2>{title}</h2>
+      <p class="lead">Every week, BetterHuman sends one sharp, practical email about attention, habits, digital health, and becoming less manipulable online.</p>
+      <p class="newsletter-promo">Free to join. High-value writing. Ads appear in the newsletter, so the website can stay focused on trust and growth.</p>
+    </div>
+    <div class="contact-panel">
+      <form class="contact-form" name="newsletter" method="POST" data-netlify="true" action="/thanks">
+        <input type="hidden" name="form-name" value="newsletter" />
+        <input type="email" name="email" placeholder="Enter your email" required />
+        <button class="btn btn-primary" type="submit">{cta}</button>
+      </form>
+      <p class="small">{note}</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import NewsletterSection from '../components/NewsletterSection.astro';
+import { posts } from '../data/posts';
+---
+<BaseLayout title="BetterHuman Blog" description="BetterHuman articles about attention, addiction, habits, and healthier digital living.">
+  <main class="section">
+    <div class="container">
+      <div class="section-head">
+        <div><p class="eyebrow">The BetterHuman blog</p><h1>Articles that earn trust before the signup</h1></div>
+        <p class="muted">This page functions like a reader-to-newsletter bridge: strong articles, premium visuals, and clear free-email conversion.</p>
+      </div>
+      <div class="card-grid">
+        {posts.map((post) => <PostCard post={post} />)}
+      </div>
+    </div>
+  </main>
+  <NewsletterSection compact={true} title="Read a guide, then join the free weekly email" cta="Join BetterHuman Weekly" note="The blog attracts readers. The newsletter keeps them and monetizes later with sponsorships." />
+</BaseLayout>

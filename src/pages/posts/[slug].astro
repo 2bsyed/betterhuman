@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NewsletterSection from '../../components/NewsletterSection.astro';
+import { posts } from '../../data/posts';
+
+export function getStaticPaths() {
+  return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const { post } = Astro.props;
+---
+<BaseLayout title={`${post.title} — BetterHuman`} description={post.description} image={post.image}>
+  <main class="article-wrap">
+    <article class="article">
+      <img class="article-hero" src={post.heroImage ?? post.image} alt={`${post.title} hero image`} />
+      <span class="badge">{post.category}</span>
+      <h1>{post.title}</h1>
+      <div class="article-meta">
+        <span>BetterHuman Guide</span>
+        <span>•</span>
+        {post.meta.map((item, index) => (
+          <>
+            <span>{item}</span>
+            {index < post.meta.length - 1 && <span>•</span>}
+          </>
+        ))}
+      </div>
+      <p class="lead">{post.excerpt}</p>
+      <div class="inline-cta">
+        <p><strong>Want more like this?</strong> Join the free weekly BetterHuman newsletter.</p>
+        <a class="btn btn-primary" href="/newsletter">Join free</a>
+      </div>
+      {post.content.map((paragraph, index) => (
+        index === 1 ? <blockquote>{paragraph}</blockquote> : <p>{paragraph}</p>
+      ))}
+      <div class="author-box">
+        <h3>Why this article exists</h3>
+        <p>Every BetterHuman article is meant to do one thing beyond informing: make the reader trust the weekly newsletter enough to subscribe.</p>
+      </div>
+    </article>
+  </main>
+  <NewsletterSection compact={true} title="If this helped, join the free weekly BetterHuman email" cta="Subscribe free" />
+</BaseLayout>

@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const ideas = [
+  'Why Reels Addiction Is Ruining Your Attention Span',
+  'How Porn Affects Motivation, Focus, and Self-Control',
+  'Doomscrolling Symptoms: Why You Feel Tired But Can’t Stop',
+  'How to Stop Checking Your Phone Every 5 Minutes',
+  'Why Screens Before Bed Destroy Sleep Quality',
+  'How to Reset Your Brain After Short-Form Content Overload',
+  'Self-Improvement Without Self-Hatred: A Better Model',
+  'Digital Detox vs Digital Discipline: What Actually Works',
+  'Why Plastic Convenience Culture Makes Daily Life Worse',
+  'How to Build Better Habits in a High-Stimulation World'
+];
+---
+<BaseLayout title="BetterHuman SEO ideas" description="10 article ideas designed to pull readers into the BetterHuman newsletter funnel.">
+  <main class="section">
+    <div class="container narrow">
+      <p class="eyebrow">Growth content</p>
+      <h1>10 SEO article ideas designed to bring subscribers</h1>
+      <p class="lead">These are topic ideas aimed at high-interest search behavior and strong newsletter conversion after the read.</p>
+      <div class="seo-list">
+        {ideas.map((idea, index) => (
+          <div class="seo-item">
+            <span class="seo-number">{index + 1}</span>
+            <div>
+              <h3>{idea}</h3>
+              <p>Write this as a practical guide, then place strong free-newsletter CTAs after the intro, mid-article, and closing section.</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+</BaseLayout>

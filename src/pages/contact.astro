@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Contact BetterHuman" description="Contact BetterHuman for feedback, partnerships, or newsletter ideas.">
+  <main class="section">
+    <div class="container contact-grid">
+      <section class="contact-panel">
+        <p class="eyebrow">Contact</p>
+        <h1>Reach out to BetterHuman</h1>
+        <p>Use this page for feedback, article ideas, partnerships, or sponsorship questions tied to the weekly newsletter.</p>
+        <div class="author-box">
+          <h3>Newsletter platform options</h3>
+          <ul>
+            <li><strong>Beehiiv</strong> — best if you want media-style newsletter growth, referrals, and ad tools</li>
+            <li><strong>ConvertKit</strong> — good if you want creator tools, forms, automations, and landing pages</li>
+            <li><strong>Buttondown</strong> — simpler, cleaner, and cheaper if you mostly want writing + email delivery</li>
+          </ul>
+        </div>
+      </section>
+      <section class="contact-panel">
+        <form class="contact-form" name="contact" method="POST" data-netlify="true" action="/thanks">
+          <input type="hidden" name="form-name" value="contact" />
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="email" name="email" placeholder="Your email" required />
+          <input type="text" name="subject" placeholder="Subject" required />
+          <textarea name="message" rows="8" placeholder="Your message" required></textarea>
+          <button class="btn btn-primary" type="submit">Send message</button>
+        </form>
+      </section>
+    </div>
+  </main>
+</BaseLayout>

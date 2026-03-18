@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SponsorMockup from '../components/SponsorMockup.astro';
+---
+<BaseLayout title="BetterHuman Weekly — join the free newsletter" description="Join the free weekly BetterHuman newsletter for digital health, better habits, and practical self-improvement.">
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Dedicated signup page</p>
+          <h1>The free weekly email for people who want a better digital life</h1>
+          <p class="lead">BetterHuman Weekly sends one high-quality email each week about attention, digital harm, self-respect, habits, and becoming harder to manipulate online.</p>
+          <ul class="benefit-list">
+            <li>Free forever to join</li>
+            <li>One strong idea each week</li>
+            <li>Practical, readable, not preachy</li>
+            <li>Sponsored spots may appear in the email to support the project</li>
+          </ul>
+          <form class="newsletter-form landing-form" name="newsletter" method="POST" data-netlify="true" action="/thanks">
+            <input type="hidden" name="form-name" value="newsletter" />
+            <input type="email" name="email" placeholder="Enter your email" required />
+            <button class="btn btn-primary" type="submit">Join free newsletter</button>
+          </form>
+          <p class="small">No paywall. No clutter. Just strong weekly writing.</p>
+        </div>
+        <div class="hero-visual">
+          <img src="/assets/hero-illustration.svg" alt="BetterHuman newsletter illustration" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="grid-3">
+          <div class="stat"><h3>What you get</h3><p>Weekly essays on reels addiction, porn compulsion, sleep damage, digital boundaries, and better habits.</p></div>
+          <div class="stat"><h3>Why free works</h3><p>Free lowers friction, increases reach, and grows an audience that can later support the project through newsletter ads.</p></div>
+          <div class="stat"><h3>Why subscribe now</h3><p>The site teaches. The newsletter builds the relationship.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <SponsorMockup />
+  </main>
+</BaseLayout>

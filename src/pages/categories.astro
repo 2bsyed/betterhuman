@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsletterSection from '../components/NewsletterSection.astro';
+import { categories, posts } from '../data/posts';
+---
+<BaseLayout title="BetterHuman Categories" description="Browse BetterHuman categories and the topics that feed newsletter growth.">
+  <main class="section">
+    <div class="container">
+      <div class="section-head">
+        <div><p class="eyebrow">Categories</p><h1>Organized by the part of life being affected</h1></div>
+        <p class="muted">Each category is designed to bring in readers and give them a reason to subscribe.</p>
+      </div>
+      <div class="grid-2">
+        {categories.map((category) => {
+          const linkedPosts = posts.filter((post) => category.slugs.includes(post.slug));
+          return (
+            <article class="card">
+              <img class="post-thumb" src={category.image} alt={`${category.name} artwork`} />
+              <span class="badge">{category.name}</span>
+              <h3>{category.name}</h3>
+              <p>{category.description}</p>
+              <div class="chip-row">
+                {linkedPosts.map((post) => <a class="chip" href={`/posts/${post.slug}`}>{post.title}</a>)}
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </main>
+  <NewsletterSection compact={true} title="The categories are free. The weekly email is where the relationship deepens." />
+</BaseLayout>

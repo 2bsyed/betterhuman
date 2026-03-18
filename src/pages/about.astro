@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsletterSection from '../components/NewsletterSection.astro';
+---
+<BaseLayout title="About BetterHuman" description="Why BetterHuman exists, what it teaches, and how the free newsletter model works.">
+  <main class="article-wrap">
+    <article class="article">
+      <img class="article-hero" src="/assets/hero-illustration.svg" alt="BetterHuman illustration" />
+      <p class="eyebrow">About BetterHuman</p>
+      <h1>A publication built to teach better digital living</h1>
+      <p class="lead">BetterHuman exists because modern life is full of systems that profit from distraction, overstimulation, passivity, and weak habits. The goal is to explain the damage clearly, then invite readers into a free weekly newsletter that helps them build better defaults.</p>
+      <h2>The business model</h2>
+      <p>The website is free and content-led. Readers come in through articles, categories, and search. The main business goal is to convert those readers into newsletter subscribers. Revenue can come later through ads and sponsorship spots inside the weekly email.</p>
+      <blockquote>Trust on the site. Retention in the inbox. Revenue in the newsletter.</blockquote>
+      <h2>What BetterHuman teaches</h2>
+      <ul>
+        <li>How digital platforms hijack attention</li>
+        <li>How compulsive habits form around stress and escape</li>
+        <li>How screens damage sleep and recovery</li>
+        <li>How convenience culture creates weak defaults</li>
+        <li>How to improve without building your identity on shame</li>
+      </ul>
+      <div class="author-box">
+        <h3>Editorial tone</h3>
+        <p>Calm, sharp, practical, and premium. No fake guru energy. No screaming motivation. Just useful writing that makes people want the weekly email.</p>
+      </div>
+    </article>
+  </main>
+  <NewsletterSection compact={true} />
+</BaseLayout>

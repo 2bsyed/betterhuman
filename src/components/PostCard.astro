@@ -1,0 +1,10 @@
+---
+const { post } = Astro.props;
+---
+<article class="card">
+  <img class="post-thumb" src={post.image} alt={`${post.title} artwork`} />
+  <span class="badge">{post.category}</span>
+  <h3>{post.title}</h3>
+  <p>{post.description}</p>
+  <a href={`/posts/${post.slug}`}>Read article →</a>
+</article>

@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsletterSection from '../components/NewsletterSection.astro';
+import PostCard from '../components/PostCard.astro';
+import SponsorMockup from '../components/SponsorMockup.astro';
+import { posts } from '../data/posts';
+const featured = posts.slice(0, 3);
+---
+<BaseLayout
+  title="BetterHuman — free weekly newsletter for a healthier digital life"
+  description="BetterHuman helps people understand modern digital harm, then turns readers into free weekly newsletter subscribers."
+>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Free newsletter business model</p>
+          <h1>Join free. Learn weekly. Build a better human.</h1>
+          <p class="lead">BetterHuman is built around one main goal: get readers onto a free weekly newsletter that teaches the bad patterns of the digital world and how to live better inside it.</p>
+          <p class="kicker">The site builds trust through strong writing. The newsletter keeps attention every week. Ads and sponsors live in the email, not all over the site.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/newsletter">Join the free newsletter</a>
+            <a class="btn btn-secondary" href="/blog">Read before subscribing</a>
+          </div>
+          <div class="chip-row" style="margin-top: 1.2rem;">
+            <span class="chip">Weekly</span><span class="chip">Free</span><span class="chip">Digital health</span><span class="chip">Attention recovery</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="/assets/hero-illustration.svg" alt="BetterHuman illustration" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="eyebrow">Why this works</p><h2>The website exists to convert readers into newsletter subscribers</h2></div>
+          <p class="muted">People discover the site through articles, trust the brand through useful writing, then join the free weekly email where ads can live naturally.</p>
+        </div>
+        <div class="grid-3">
+          <div class="stat"><h3>Attract</h3><p>Publish strong articles about porn, reels addiction, doomscrolling, sleep, and weak digital habits.</p></div>
+          <div class="stat"><h3>Convert</h3><p>Push a clear free-newsletter CTA across the homepage, articles, footer, sticky bar, and dedicated signup page.</p></div>
+          <div class="stat"><h3>Monetize</h3><p>Run sponsorships and ad placements inside the weekly email instead of cluttering the site too early.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <NewsletterSection title="Join BetterHuman Weekly for free" cta="Start getting the weekly email" note="This is the core business action of the site: free subscriber growth first, monetization later through email sponsors and ads." />
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="eyebrow">What readers care about</p><h2>Core topics that pull people in</h2></div>
+          <p class="muted">These are the attention hooks that should feed newsletter growth.</p>
+        </div>
+        <div class="grid-4">
+          <article class="feature"><span class="badge">Mind</span><h3>Porn and compulsive stimulation</h3><p>Emotional escape, shame loops, and realistic recovery systems.</p></article>
+          <article class="feature"><span class="badge">Attention</span><h3>Reels and doomscrolling</h3><p>Attention hijacking, weak focus, and getting your brain back.</p></article>
+          <article class="feature"><span class="badge">Body</span><h3>Sleep damage</h3><p>How overstimulation wrecks recovery and makes bad habits stronger.</p></article>
+          <article class="feature"><span class="badge">Identity</span><h3>Better self-improvement</h3><p>Discipline without self-hatred, systems without fake guru nonsense.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="eyebrow">Featured reads</p><h2>Read one, then join the newsletter</h2></div>
+          <a href="/blog">See all articles →</a>
+        </div>
+        <div class="card-grid">
+          {featured.map((post) => <PostCard post={post} />)}
+        </div>
+      </div>
+    </section>
+
+    <SponsorMockup />
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="eyebrow">Growth assets</p><h2>More than a website — this is a subscriber funnel</h2></div>
+          <p class="muted">Dedicated landing page, sticky signup prompts, sponsor-friendly email positioning, and SEO article ideas.</p>
+        </div>
+        <div class="logo-strip">
+          <a class="logo-item" href="/newsletter">Dedicated signup page</a>
+          <a class="logo-item" href="/seo-ideas">10 SEO ideas</a>
+          <div class="logo-item">Sticky newsletter CTA</div>
+          <div class="logo-item">Email-first monetization</div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
